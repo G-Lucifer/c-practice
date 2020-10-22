@@ -18,7 +18,8 @@ namespace cspractice
                     + "\n 3 for ProductSMallestPair"
                     + "\n 4 for OperationsBinaryString"
                     + "\n 5 for FindSmallestSubArrayLength"
-                    + "\n 6 for DectoNBase");
+                    + "\n 6 for DectoNBase"
+                    + "\n 7 for NivenNumbers");
                 choice = int.Parse(Console.ReadLine());
 
                 if (choice == 1)
@@ -31,7 +32,7 @@ namespace cspractice
                     Console.WriteLine("Enter Array");
                     int[] arr = new int[] { };
 
-                   // string[] x = Console.ReadLine().Split(" ");
+                    // string[] x = Console.ReadLine().Split(" ");
                     arr = Array.ConvertAll(Console.ReadLine().Split(" "), p => int.Parse(p));
 
                     //for (int i = 0; i < size; i++)
@@ -79,10 +80,11 @@ namespace cspractice
                     sum = int.Parse(Console.ReadLine());
                     Console.WriteLine($"{ FindSmallestSubArrayLength(arr, sum)}");
                 }
-                else if (choice ==6)
+                else if (choice == 6)
                 {
                     Console.WriteLine($"{DectoNBase(5, 5)}");
-                }       
+                }
+                else if (choice == 7) NivenNum();
                 Console.WriteLine("Leave?");
                 leave = int.Parse(Console.ReadLine());
             }
@@ -237,7 +239,23 @@ namespace cspractice
             { 
                 return "ajhnjhnh";
             }
+            void NivenNum()
+            {
+                int n = 36, sum = 0;
+                string x = n.ToString();
+                List<int> mylist = new List<int>();
+                foreach (var item in x)
+                {
+                    mylist.Add(int.Parse(item.ToString()));
+                }
+                for (int i = 0; i < mylist.Count; i++)
+                {
+                    sum += mylist[i];
+                }
+                if (n % sum == 0) Console.WriteLine($"{n / sum}");
 
+                else Console.WriteLine("0");
+            }
 
 
 
