@@ -12,12 +12,13 @@ namespace cspractice
 
             while (leave != 1)
             {
-                Console.WriteLine("Enter Choice \n 1 for DifferenceOfSum"
+                Console.WriteLine("Enter Choice " +
+                      "\n 1 for DifferenceOfSum"
                     + "\n 2 for LargeSmallSum"
                     + "\n 3 for ProductSMallestPair"
                     + "\n 4 for OperationsBinaryString"
                     + "\n 5 for FindSmallestSubArrayLength"
-                    + "\n 6 for OperationsBinaryString");
+                    + "\n 6 for DectoNBase");
                 choice = int.Parse(Console.ReadLine());
 
                 if (choice == 1)
@@ -30,8 +31,8 @@ namespace cspractice
                     Console.WriteLine("Enter Array");
                     int[] arr = new int[] { };
 
-                    var x = Console.ReadLine().Split(" ");
-                    arr = Array.ConvertAll(x, p => int.Parse(p));
+                   // string[] x = Console.ReadLine().Split(" ");
+                    arr = Array.ConvertAll(Console.ReadLine().Split(" "), p => int.Parse(p));
 
                     //for (int i = 0; i < size; i++)
                     //{
